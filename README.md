@@ -1,11 +1,13 @@
 # Devolo
-Tool for reading Diablo II resources and documentation of file formats.
+Tool for reading Diablo II resources and a general documentation of file formats.
+
+*Note: No actual resources are included in the repository. You'll need an original copy of the original Diablo II (I don't know whether the remastered version contains the old game files).*
 
 ## Roadmap
 
-- [ ] Write readme with overview and plan for program
-- [ ] Start Qt-Frontend (layout: filebrowser, display area)
-- [ ] Integrate my bitstream class
+- [X] Write readme with overview and plan for program
+- [X] Start Qt-Frontend (layout: filebrowser, display area)
+- [ ] Integrate bitstream class
 - [ ] Dc6 file format
 - [ ] Palette file format
 - [ ] Wav file format (FFmpeg)
