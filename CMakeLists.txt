@@ -19,6 +19,8 @@ set(PROJECT_SOURCES
         filewindow.cpp
         filewindow.h
         filewindow.ui
+        bitstream.cpp
+        bitstream.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
