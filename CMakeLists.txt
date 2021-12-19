@@ -8,7 +8,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
@@ -21,6 +21,11 @@ set(PROJECT_SOURCES
         filewindow.ui
         bitstream.cpp
         bitstream.h
+        dc6.cpp
+        dc6.h
+        dc6dialog.cpp
+        dc6dialog.h
+        dc6dialog.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

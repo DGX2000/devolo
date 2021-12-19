@@ -10,6 +10,8 @@ class BitStream
 public:
     static BitStream fromFile(const std::string& filename);
 
+    std::uint32_t seekGlobal(std::uint32_t target);
+
     template<typename T, bool bigEndian = false>
     T extract(std::uint64_t bits = 0)
     {
@@ -45,12 +47,13 @@ public:
             }
 
             // discard already read bits
-            scratchpad.whole <<= 64 - (currentBit + bitsToExtract);
+            auto currentBitInDWord = currentBit % 32;
+            scratchpad.whole <<= 64 - (currentBitInDWord + bitsToExtract);
             scratchpad.whole >>= 64 - bitsToExtract;
 
 
             // advance
-            currentBit = (currentBit + bitsToExtract) % 32;
+            currentBit += bitsToExtract;
 
             return static_cast<T>(scratchpad.first);
         }

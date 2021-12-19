@@ -1,6 +1,7 @@
 #ifndef FILEWINDOW_H
 #define FILEWINDOW_H
 
+#include <QFileSystemModel>
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -20,5 +21,6 @@ private slots:
 
 private:
     Ui::FileWindow *ui;
+    QFileSystemModel *fsModel;
 };
 #endif // FILEWINDOW_H

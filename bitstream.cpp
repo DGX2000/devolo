@@ -16,6 +16,12 @@ BitStream BitStream::fromFile(const std::string &filename)
     return BitStream(std::move(data), 0, fileSize * 8);
 }
 
+uint32_t BitStream::seekGlobal(uint32_t target)
+{
+    currentBit = 8 * static_cast<std::uint64_t>(target);
+    return target;
+}
+
 BitStream::BitStream(std::vector<uint32_t> &&data, uint64_t firstBit, uint64_t lastBit)
     : data(data), firstBit(firstBit), lastBit(lastBit)
 {
